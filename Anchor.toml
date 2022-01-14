@@ -1,0 +1,15 @@
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[programs.localnet]
+abc = "3M1C9Z8941rrXfpeAiXyQLYxaJPg5GLiVXUZGPqRx26K"
+
+[workspace]
+members = ["programs/abc"]
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/abc.ts"
