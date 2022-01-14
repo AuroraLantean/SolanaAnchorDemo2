@@ -194,7 +194,7 @@ output:
 
 See the test file at ./tests/abc.ts
 
-if you uncomment any of those lines below and run the test again
+if you uncomment any of those lines below at line 18 and 19, and run the test again
 ```
   //log2('here log2');
   //console.log('bn(3):', bn(3));
@@ -225,3 +225,7 @@ error Command failed with exit code 1.
 info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
 
 ```
+
+So somehow, the test file cannot run any imported functions!!!???
+
+Please advise. thank you
