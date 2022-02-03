@@ -4,9 +4,9 @@ examples from Anchor https://github.com/project-serum/anchor/tree/master/tests
 
 ---
 ## Install Node
-install via NVM or download at https://nodejs.org/en/download/
+install the latest NodeJs via NVM or download at https://nodejs.org/en/download/
 
-Confirm the installed NodeJs version is 16.13.0
+Confirm the installed NodeJs version is 16.13.2
 
 `$ node -v`
 
@@ -19,7 +19,7 @@ If you already have Rust: `$ rustup update stable`
 
 Or install Rust : `$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
-Confirm the installed Rust version 1.57.0
+Confirm the installed Rust version 1.58.0
 
 `$ rustc --version`
 
@@ -79,6 +79,7 @@ Yarn is recommended by Anchor for JavaScript package management. Anchor uses Yar
 
 `$ npm install -g yarn`
 
+confirm the installed yarn version is 1.22.17
 
 ---
 ## Install Anchor
@@ -191,10 +192,26 @@ output:
   2 passing (826ms)
 
 ```
+---
+## Anchor JS and Rust dependency problem
 
+update Anchor in Rust by going to project root/programs/abc/Cargo.toml, then change the two anchor dependencies from 0.19.0 to 0.20.1
+```
+anchor-lang = "0.20.1"
+anchor-spl = "0.20.1"
+```
+Run `yarn test`
+
+update "@project-serum/anchor" to 0.20.1 by
+`yarn add @project-serum/anchor`
+
+Run `yarn test`
+
+---
+## Invoking imported functions in Typescript problem
 See the test file at ./tests/abc.ts
 
-if you uncomment any of those lines below at line 18 and 19, and run the test again
+if you uncomment any of those lines below at line 133 and 134, and run the test again
 ```
   //log2('here log2');
   //console.log('bn(3):', bn(3));
